@@ -23,7 +23,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Close mobile menu on Escape key
+// Close mobile menu or lightbox modal on Escape key
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     const menu = document.querySelector(".menu-links");
@@ -32,8 +32,41 @@ document.addEventListener("keydown", (e) => {
       menu.classList.remove("open");
       if (icon) icon.classList.remove("open");
     }
+    closeLightbox();
   }
 });
+
+// Lightbox Modal Functions
+function openLightbox(src, title, category, desc) {
+  const modal = document.getElementById("creative-lightbox");
+  const img = document.getElementById("lightbox-img");
+  const titleEl = document.getElementById("lightbox-title");
+  const catEl = document.getElementById("lightbox-category");
+  const descEl = document.getElementById("lightbox-desc");
+
+  if (!modal || !img) return;
+
+  img.src = src;
+  img.alt = title || "Photography capture";
+  if (titleEl) titleEl.textContent = title;
+  if (catEl) catEl.textContent = category;
+  if (descEl) descEl.textContent = desc;
+
+  modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  const modal = document.getElementById("creative-lightbox");
+  if (!modal) return;
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
 
 // Smoothly scroll to a section by ID, taking dynamic sticky header height into account
 function scrollToSection(id) {
@@ -171,6 +204,36 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial call to set active nav link and scrollbar state
   onScroll();
 
+  // Creative Gallery Filter Logic
+  const filterBtns = document.querySelectorAll(".creative-filter-bar .filter-btn");
+  const galleryItems = document.querySelectorAll(".creative-gallery-item");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.getAttribute("data-filter");
+
+      galleryItems.forEach((item) => {
+        const itemCat = item.getAttribute("data-category");
+        if (filter === "all" || itemCat === filter) {
+          item.style.display = "block";
+          requestAnimationFrame(() => {
+            item.style.opacity = "1";
+            item.style.transform = "scale(1)";
+          });
+        } else {
+          item.style.opacity = "0";
+          item.style.transform = "scale(0.96)";
+          setTimeout(() => {
+            item.style.display = "none";
+          }, 240);
+        }
+      });
+    });
+  });
+
   // Scroll Reveal Animations with IntersectionObserver
   if ("IntersectionObserver" in window) {
     const revealTargets = document.querySelectorAll(
@@ -179,7 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "section:not(#profile) .section__pic-container, " +
       "section:not(#profile) .details-container, " +
       "section:not(#profile) .text-container, " +
-      "section:not(#profile) .contact-info-upper-container"
+      "section:not(#profile) .contact-info-upper-container, " +
+      "section:not(#profile) .creative-filter-bar, " +
+      "section:not(#profile) .creative-gallery-item"
     );
 
     revealTargets.forEach((el) => {
@@ -191,6 +256,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const cards = container.querySelectorAll(".details-container");
       cards.forEach((card, index) => {
         card.classList.add(`delay-${(index % 3) + 1}`);
+      });
+    });
+
+    // Stagger gallery items
+    document.querySelectorAll(".creative-gallery-grid").forEach((grid) => {
+      const items = grid.querySelectorAll(".creative-gallery-item");
+      items.forEach((item, index) => {
+        item.classList.add(`delay-${(index % 2) + 1}`);
       });
     });
 

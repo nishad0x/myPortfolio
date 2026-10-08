@@ -24,6 +24,7 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#achievement">Achievements</a></li>
+          <li><a href="#creativity">Creativity</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -43,6 +44,7 @@
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#achievement" onclick="toggleMenu()">Achievements</a></li>
+          <li><a href="#creativity" onclick="toggleMenu()">Creativity</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
@@ -69,6 +71,8 @@
           onclick="window.open('https://www.linkedin.com/in/nishad0x/', '_blank')" />
         <img src="./assets/github.png" alt="My Github profile" class="icon"
           onclick="window.open('https://github.com/nishad0x', '_blank')" />
+        <img src="./assets/unsplash.svg" alt="My Unsplash profile" class="icon"
+          onclick="window.open('https://unsplash.com/@nishad0x', '_blank')" title="Unsplash Profile" />
       </div>
     </div>
   </section>
@@ -373,6 +377,148 @@
         </div>
       </div>
     </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="scrollToSection('creativity')" />
+  </section>
+  <section id="creativity">
+    <p class="section__text__p1">Beyond Code & Engineering</p>
+    <h1 class="title">Creative Pursuits</h1>
+    <div class="creativity-container">
+      <!-- Creative Spotlight / Unsplash Profile Card -->
+      <div class="creative-profile-card details-container">
+        <div class="creative-profile-header">
+          <div class="unsplash-brand-badge" onclick="window.open('https://unsplash.com/@nishad0x', '_blank')" title="Visit Unsplash Profile">
+            <svg class="unsplash-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.5 6.75V0h9v6.75h-9zm9 3.75H24V24H0V10.5h7.5v6.75h9V10.5z"/>
+            </svg>
+            <div class="unsplash-brand-text">
+              <span class="unsplash-badge-title">Unsplash Contributor</span>
+              <span class="unsplash-badge-handle">@nishad0x</span>
+            </div>
+          </div>
+          <span class="creative-tag-pill">Visual Storytelling & Photography</span>
+        </div>
+        <p class="creative-bio-text">
+          Apart from cybersecurity and engineering systems, I find balance and inspiration through the lens.
+          Photography is my medium for observing organic patterns, interplay of light and shadows, and the quiet rhythm of both mountainous landscapes and urban forms.
+        </p>
+        <div class="creative-stats-row">
+          <div class="creative-stat-item">
+            <span class="stat-number">Himalayas</span>
+            <span class="stat-label">Landscape & Nature</span>
+          </div>
+          <div class="creative-stat-divider"></div>
+          <div class="creative-stat-item">
+            <span class="stat-number">Urban & Minimal</span>
+            <span class="stat-label">Perspective & Shadows</span>
+          </div>
+          <div class="creative-stat-divider"></div>
+          <div class="creative-stat-item">
+            <span class="stat-number">Editorial</span>
+            <span class="stat-label">High-Res Captures</span>
+          </div>
+        </div>
+        <div class="btn-container creative-cta-container">
+          <button class="btn btn-color-1" onclick="window.open('https://unsplash.com/@nishad0x', '_blank')">
+            Visit Unsplash Profile ↗
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="creative-filter-bar">
+        <button class="filter-btn active" data-filter="all">All Captures</button>
+        <button class="filter-btn" data-filter="landscape">Nature & Himalayas</button>
+        <button class="filter-btn" data-filter="architecture">Architecture & Lines</button>
+        <button class="filter-btn" data-filter="street">Street & Atmosphere</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="creative-gallery-grid">
+        <!-- Photo 1: Himalayas -->
+        <div class="creative-gallery-item" data-category="landscape">
+          <div class="creative-img-wrapper" onclick="openLightbox('./assets/images/photo-himalayas.jpg', 'Misty Peaks of Dharamshala', 'Himalayas & Nature • Kangra Valley', 'Sunrise breaking through rolling morning clouds over lush pine ridges in Himachal Pradesh.')">
+            <img src="./assets/images/photo-himalayas.jpg" alt="Misty Peaks of Dharamshala photography" class="creative-gallery-img" loading="lazy" />
+            <div class="creative-overlay">
+              <span class="overlay-category">Landscape</span>
+              <h3 class="overlay-title">Misty Peaks of Dharamshala</h3>
+              <p class="overlay-meta">Kangra Valley, Himachal Pradesh</p>
+              <span class="overlay-action">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                View Details
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 2: Architecture -->
+        <div class="creative-gallery-item" data-category="architecture">
+          <div class="creative-img-wrapper" onclick="openLightbox('./assets/images/photo-architecture.jpg', 'Geometry & Concrete Angles', 'Architecture & Lines • Minimal Form', 'Sharp architectural geometry meeting raw concrete textures under clear skies.')">
+            <img src="./assets/images/photo-architecture.jpg" alt="Geometric architecture photography" class="creative-gallery-img" loading="lazy" />
+            <div class="creative-overlay">
+              <span class="overlay-category">Architecture</span>
+              <h3 class="overlay-title">Geometry & Concrete Angles</h3>
+              <p class="overlay-meta">Minimal Modernist Structure</p>
+              <span class="overlay-action">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                View Details
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 3: Nature Macro -->
+        <div class="creative-gallery-item" data-category="landscape">
+          <div class="creative-img-wrapper" onclick="openLightbox('./assets/images/photo-nature.jpg', 'Morning Dew on Forest Ferns', 'Nature & Macro • Monsoon Forest', 'Delicate water droplets glistening on deep emerald fern fronds in a misty sanctuary.')">
+            <img src="./assets/images/photo-nature.jpg" alt="Fern macro nature photography" class="creative-gallery-img" loading="lazy" />
+            <div class="creative-overlay">
+              <span class="overlay-category">Botanical</span>
+              <h3 class="overlay-title">Morning Dew on Forest Ferns</h3>
+              <p class="overlay-meta">Deep Canopy Wilderness</p>
+              <span class="overlay-action">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                View Details
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 4: Street & Twilight -->
+        <div class="creative-gallery-item" data-category="street">
+          <div class="creative-img-wrapper" onclick="openLightbox('./assets/images/photo-street.jpg', 'Twilight Reflections & Solitude', 'Street & Atmosphere • Urban Night', 'Glistening rain-drenched pavement reflecting glowing city lights during quiet evening hours.')">
+            <img src="./assets/images/photo-street.jpg" alt="Cinematic night street photography" class="creative-gallery-img" loading="lazy" />
+            <div class="creative-overlay">
+              <span class="overlay-category">Atmosphere</span>
+              <h3 class="overlay-title">Twilight Reflections & Solitude</h3>
+              <p class="overlay-meta">Urban Night Walk</p>
+              <span class="overlay-action">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                View Details
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="scrollToSection('contact')" />
   </section>
   <section id="contact">
@@ -403,12 +549,36 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#achievement">Achievements</a></li>
+          <li><a href="#creativity">Creativity</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
     <p>Copyright &#169; 2026 Nishad. All Rights Reserved.</p>
   </footer>
+
+  <!-- Creative Lightbox Modal -->
+  <div id="creative-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close modal">&times;</button>
+      <div class="lightbox-img-wrapper">
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="lightbox-info">
+        <div class="lightbox-header-row">
+          <div>
+            <span id="lightbox-category" class="lightbox-category-tag">Category</span>
+            <h2 id="lightbox-title" class="lightbox-title">Photo Title</h2>
+          </div>
+          <button class="btn btn-color-1 lightbox-btn" onclick="window.open('https://unsplash.com/@nishad0x', '_blank')">
+            View on Unsplash ↗
+          </button>
+        </div>
+        <p id="lightbox-desc" class="lightbox-desc">Photo description</p>
+      </div>
+    </div>
+  </div>
   <script src="./js/script.js"></script>
 </body>
 
