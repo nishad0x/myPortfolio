@@ -410,19 +410,19 @@
           of both mountainous landscapes and urban forms.
         </p>
         <div class="creative-stats-row">
-          <div class="creative-stat-item">
-            <span class="stat-number">Himalayas</span>
-            <span class="stat-label">Landscape & Nature</span>
+          <div class="creative-stat-item interactive-stat" data-target-filter="travel-nature" title="Filter by Travel & Nature">
+            <span class="stat-number">Travel & Nature</span>
+            <span class="stat-label">Landscapes & Wilderness</span>
           </div>
           <div class="creative-stat-divider"></div>
-          <div class="creative-stat-item">
-            <span class="stat-number">Urban & Minimal</span>
-            <span class="stat-label">Perspective & Shadows</span>
+          <div class="creative-stat-item interactive-stat" data-target-filter="lifestyle-living" title="Filter by Lifestyle & Living">
+            <span class="stat-number">Lifestyle & Living</span>
+            <span class="stat-label">Minimal Living & Rhythms</span>
           </div>
           <div class="creative-stat-divider"></div>
-          <div class="creative-stat-item">
-            <span class="stat-number">Editorial</span>
-            <span class="stat-label">High-Res Captures</span>
+          <div class="creative-stat-item interactive-stat" onclick="window.open('https://unsplash.com/@nishad0x', '_blank')" title="Visit Unsplash Profile">
+            <span class="stat-number">Unsplash ↗</span>
+            <span class="stat-label">Full Curated Profile</span>
           </div>
         </div>
         <div class="btn-container creative-cta-container">
@@ -435,17 +435,19 @@
       <!-- Filter Tabs -->
       <div class="creative-filter-bar">
         <button class="filter-btn active" data-filter="all">All Captures</button>
-        <button class="filter-btn" data-filter="landscape">Nature & Himalayas</button>
-        <button class="filter-btn" data-filter="architecture">Architecture & Lines</button>
-        <button class="filter-btn" data-filter="street">Street & Atmosphere</button>
+        <button class="filter-btn" data-filter="travel-nature">Travel & Nature</button>
+        <button class="filter-btn" data-filter="lifestyle-living">Lifestyle & Living</button>
       </div>
 
       <!-- Gallery Grid -->
       <div class="creative-gallery-grid">
-        <!-- Photo 1: Himalayas -->
-        <div class="creative-gallery-item" data-category="landscape">
+        <!-- Photo 1: Himalayas (Travel & Nature) -->
+        <div class="creative-gallery-item" data-category="travel-nature">
           <div class="creative-img-wrapper"
-            onclick="openLightbox('./assets/images/photo-himalayas.jpg', 'Evening Light', 'Himalayas & Nature • Shimla', 'Sunrise breaking through rolling morning clouds over lush pine ridges in Himachal Pradesh.')">
+            onclick="openLightbox('./assets/images/photo-himalayas.jpeg', 'Evening Light', 'Travel & Nature • Shimla', 'Sunrise breaking through rolling morning clouds over lush pine ridges in Himachal Pradesh.')">
+            <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer" class="card-unsplash-badge" onclick="event.stopPropagation()" title="View on Unsplash">
+              Unsplash ↗
+            </a>
             <img src="./assets/images/photo-himalayas.jpeg" alt="Evening Light photography" class="creative-gallery-img"
               loading="lazy" />
             <div class="creative-overlay">
@@ -465,37 +467,17 @@
           </div>
         </div>
 
-        <!-- Photo 2: Architecture -->
-        <div class="creative-gallery-item" data-category="lifestyle">
+        <!-- Photo 2: Nature Macro (Travel & Nature) -->
+        <div class="creative-gallery-item" data-category="travel-nature">
           <div class="creative-img-wrapper"
-            onclick="openLightbox('./assets/images/photo-architecture.jpg', 'Geometry & Concrete Angles', 'Coffee • Minimal Form', 'A lifestyle that keeps mind calm & composed.')">
-            <img src="./assets/images/photo-coffee.jpeg" alt="Morning Coffee" class="creative-gallery-img"
-              loading="lazy" />
-            <div class="creative-overlay">
-              <span class="overlay-category">Lifestyle & Living</span>
-              <h3 class="overlay-title">Morning Coffee</h3>
-              <p class="overlay-meta">The art of minimal lifestyle</p>
-              <span class="overlay-action">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  <line x1="11" y1="8" x2="11" y2="14"></line>
-                  <line x1="8" y1="11" x2="14" y2="11"></line>
-                </svg>
-                View Details
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Photo 3: Nature Macro -->
-        <div class="creative-gallery-item" data-category="landscape">
-          <div class="creative-img-wrapper"
-            onclick="openLightbox('./assets/images/photo-nature.jpg', 'Morning Dew on Forest Ferns', 'Nature & Macro • Monsoon Forest', 'Delicate water droplets glistening on deep emerald fern fronds in a misty sanctuary.')">
+            onclick="openLightbox('./assets/images/photo-nature.jpg', 'Morning Dew on Forest Ferns', 'Travel & Nature • Monsoon Forest', 'Delicate water droplets glistening on deep emerald fern fronds in a misty sanctuary.')">
+            <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer" class="card-unsplash-badge" onclick="event.stopPropagation()" title="View on Unsplash">
+              Unsplash ↗
+            </a>
             <img src="./assets/images/photo-nature.jpg" alt="Fern macro nature photography" class="creative-gallery-img"
               loading="lazy" />
             <div class="creative-overlay">
-              <span class="overlay-category">Botanical</span>
+              <span class="overlay-category">Travel & Nature</span>
               <h3 class="overlay-title">Morning Dew on Forest Ferns</h3>
               <p class="overlay-meta">Deep Canopy Wilderness</p>
               <span class="overlay-action">
@@ -511,14 +493,43 @@
           </div>
         </div>
 
-        <!-- Photo 4: Street & Twilight -->
-        <div class="creative-gallery-item" data-category="street">
+        <!-- Photo 3: Coffee (Lifestyle & Living) -->
+        <div class="creative-gallery-item" data-category="lifestyle-living">
           <div class="creative-img-wrapper"
-            onclick="openLightbox('./assets/images/photo-street.jpg', 'Twilight Reflections & Solitude', 'Street & Atmosphere • Urban Night', 'Glistening rain-drenched pavement reflecting glowing city lights during quiet evening hours.')">
+            onclick="openLightbox('./assets/images/photo-coffee.jpeg', 'Morning Coffee & Stillness', 'Lifestyle & Living • Ritual', 'A serene morning coffee ritual reflecting the intentional calm and art of minimal living.')">
+            <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer" class="card-unsplash-badge" onclick="event.stopPropagation()" title="View on Unsplash">
+              Unsplash ↗
+            </a>
+            <img src="./assets/images/photo-coffee.jpeg" alt="Morning Coffee" class="creative-gallery-img"
+              loading="lazy" />
+            <div class="creative-overlay">
+              <span class="overlay-category">Lifestyle & Living</span>
+              <h3 class="overlay-title">Morning Coffee & Stillness</h3>
+              <p class="overlay-meta">The Art of Minimal Living</p>
+              <span class="overlay-action">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+                View Details
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo 4: Street & Twilight (Lifestyle & Living) -->
+        <div class="creative-gallery-item" data-category="lifestyle-living">
+          <div class="creative-img-wrapper"
+            onclick="openLightbox('./assets/images/photo-street.jpg', 'Twilight Reflections & Solitude', 'Lifestyle & Living • Urban Night', 'Glistening rain-drenched pavement reflecting glowing city lights during quiet evening hours.')">
+            <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer" class="card-unsplash-badge" onclick="event.stopPropagation()" title="View on Unsplash">
+              Unsplash ↗
+            </a>
             <img src="./assets/images/photo-street.jpg" alt="Cinematic night street photography"
               class="creative-gallery-img" loading="lazy" />
             <div class="creative-overlay">
-              <span class="overlay-category">Atmosphere</span>
+              <span class="overlay-category">Lifestyle & Living</span>
               <h3 class="overlay-title">Twilight Reflections & Solitude</h3>
               <p class="overlay-meta">Urban Night Walk</p>
               <span class="overlay-action">
@@ -533,6 +544,32 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Creative Unsplash Discovery Banner -->
+      <div class="creative-unsplash-cta-box">
+        <div class="creative-unsplash-cta-left">
+          <div class="unsplash-icon-circle">
+            <svg class="unsplash-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.5 6.75V0h9v6.75h-9zm9 3.75H24V24H0V10.5h7.5v6.75h9V10.5z" />
+            </svg>
+          </div>
+          <div class="creative-unsplash-cta-text">
+            <h3 class="cta-heading" id="unsplash-cta-title">Explore the Full Photography Collection</h3>
+            <p class="cta-subheading" id="unsplash-cta-sub">
+              Browse high-resolution captures, visual journals, and editorial features directly on my Unsplash profile.
+            </p>
+          </div>
+        </div>
+        <a id="unsplash-cta-btn" href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer"
+          class="btn btn-color-1 creative-unsplash-direct-btn">
+          <span id="unsplash-cta-btn-text">Visit @nishad0x on Unsplash</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
       </div>
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="scrollToSection('contact')" />

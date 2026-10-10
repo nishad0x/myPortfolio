@@ -207,30 +207,68 @@ document.addEventListener("DOMContentLoaded", () => {
   // Creative Gallery Filter Logic
   const filterBtns = document.querySelectorAll(".creative-filter-bar .filter-btn");
   const galleryItems = document.querySelectorAll(".creative-gallery-item");
+  const ctaTitle = document.getElementById("unsplash-cta-title");
+  const ctaSub = document.getElementById("unsplash-cta-sub");
+  const ctaBtnText = document.getElementById("unsplash-cta-btn-text");
+
+  function applyCategoryFilter(filter) {
+    filterBtns.forEach((b) => {
+      if (b.getAttribute("data-filter") === filter) {
+        b.classList.add("active");
+      } else {
+        b.classList.remove("active");
+      }
+    });
+
+    galleryItems.forEach((item) => {
+      const itemCat = item.getAttribute("data-category");
+      if (filter === "all" || itemCat === filter) {
+        item.style.display = "block";
+        setTimeout(() => {
+          item.style.opacity = "1";
+          item.style.transform = "scale(1)";
+        }, 15);
+      } else {
+        item.style.opacity = "0";
+        item.style.transform = "scale(0.96)";
+        setTimeout(() => {
+          item.style.display = "none";
+        }, 220);
+      }
+    });
+
+    // Update dynamic Unsplash CTA banner content
+    if (filter === "travel-nature") {
+      if (ctaTitle) ctaTitle.innerHTML = 'Looking for more <span class="highlight-text">Travel & Nature</span> captures?';
+      if (ctaSub) ctaSub.textContent = "Explore high-resolution Himalayan landscapes, wilderness series, and mountain light stories directly on my Unsplash profile.";
+      if (ctaBtnText) ctaBtnText.textContent = "Explore Travel & Nature on Unsplash";
+    } else if (filter === "lifestyle-living") {
+      if (ctaTitle) ctaTitle.innerHTML = 'Looking for more <span class="highlight-text">Lifestyle & Living</span> captures?';
+      if (ctaSub) ctaSub.textContent = "Discover minimalist everyday frames, coffee aesthetics, and quiet urban rhythms on my Unsplash profile.";
+      if (ctaBtnText) ctaBtnText.textContent = "Explore Lifestyle & Living on Unsplash";
+    } else {
+      if (ctaTitle) ctaTitle.innerHTML = 'Explore the Full Photography Collection';
+      if (ctaSub) ctaSub.textContent = "Browse high-resolution captures, visual journals, and editorial features directly on my Unsplash profile.";
+      if (ctaBtnText) ctaBtnText.textContent = "Visit @nishad0x on Unsplash";
+    }
+  }
 
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      filterBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-
       const filter = btn.getAttribute("data-filter");
+      applyCategoryFilter(filter);
+    });
+  });
 
-      galleryItems.forEach((item) => {
-        const itemCat = item.getAttribute("data-category");
-        if (filter === "all" || itemCat === filter) {
-          item.style.display = "block";
-          requestAnimationFrame(() => {
-            item.style.opacity = "1";
-            item.style.transform = "scale(1)";
-          });
-        } else {
-          item.style.opacity = "0";
-          item.style.transform = "scale(0.96)";
-          setTimeout(() => {
-            item.style.display = "none";
-          }, 240);
-        }
-      });
+  // Enable interactive stat items in the Unsplash profile card to switch categories
+  document.querySelectorAll(".interactive-stat[data-target-filter]").forEach((stat) => {
+    stat.addEventListener("click", () => {
+      const targetFilter = stat.getAttribute("data-target-filter");
+      applyCategoryFilter(targetFilter);
+      const filterBar = document.querySelector(".creative-filter-bar");
+      if (filterBar) {
+        filterBar.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     });
   });
 
@@ -244,7 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "section:not(#profile) .text-container, " +
       "section:not(#profile) .contact-info-upper-container, " +
       "section:not(#profile) .creative-filter-bar, " +
-      "section:not(#profile) .creative-gallery-item"
+      "section:not(#profile) .creative-gallery-item, " +
+      "section:not(#profile) .creative-unsplash-cta-box"
     );
 
     revealTargets.forEach((el) => {

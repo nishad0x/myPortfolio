@@ -914,6 +914,24 @@ article p {
   gap: 0.25rem;
 }
 
+.interactive-stat {
+  cursor: pointer;
+  padding: 0.35rem 0.75rem;
+  border-radius: 1rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interactive-stat:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.interactive-stat:hover .stat-number {
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .stat-number {
   font-size: 1.12rem;
   font-weight: 600;
@@ -1088,6 +1106,141 @@ article p {
 
 .overlay-action:hover {
   background: rgba(255, 255, 255, 0.35);
+}
+
+/* Card Direct Unsplash Badge */
+.card-unsplash-badge {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: white;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.4rem 0.85rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.creative-gallery-item:hover .card-unsplash-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-unsplash-badge:hover {
+  background: rgba(0, 0, 0, 0.88);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px) scale(1.04);
+}
+
+/* Creative Unsplash Discovery Banner */
+.creative-unsplash-cta-box {
+  width: 100%;
+  max-width: 1050px;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
+  border: 1.5px solid rgb(220, 220, 220);
+  border-radius: 1.75rem;
+  padding: 1.75rem 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+  margin-top: 0.25rem;
+}
+
+.creative-unsplash-cta-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+  border-color: rgb(75, 75, 75);
+}
+
+.creative-unsplash-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.unsplash-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.unsplash-icon-circle svg {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+}
+
+.creative-unsplash-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: left;
+}
+
+.creative-unsplash-cta-text .cta-heading {
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.35;
+}
+
+.creative-unsplash-cta-text .cta-heading .highlight-text {
+  color: #000000;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.creative-unsplash-cta-text .cta-subheading {
+  font-size: 0.94rem;
+  color: rgb(90, 90, 90);
+  line-height: 1.5;
+  max-width: 620px;
+}
+
+.creative-unsplash-direct-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.65rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: fit-content;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.creative-unsplash-direct-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.creative-unsplash-direct-btn:hover svg {
+  transform: translate(2px, -2px);
 }
 
 /* LIGHTBOX MODAL */
