@@ -392,8 +392,8 @@
       <!-- Creative Spotlight / Unsplash Profile Card -->
       <div class="creative-profile-card details-container">
         <div class="creative-profile-header">
-          <div class="unsplash-brand-badge" onclick="window.open('https://unsplash.com/@nishad0x', '_blank')"
-            title="Visit Unsplash Profile">
+          <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer"
+            class="unsplash-brand-badge" title="Visit Unsplash Profile">
             <svg class="unsplash-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M7.5 6.75V0h9v6.75h-9zm9 3.75H24V24H0V10.5h7.5v6.75h9V10.5z" />
             </svg>
@@ -401,7 +401,7 @@
               <span class="unsplash-badge-title">Unsplash Contributor</span>
               <span class="unsplash-badge-handle">@nishad0x</span>
             </div>
-          </div>
+          </a>
           <span class="creative-tag-pill">Visual Storytelling & Photography</span>
         </div>
         <p class="creative-bio-text">
@@ -409,173 +409,27 @@
           Photography is my medium for observing organic patterns, interplay of light and shadows, and the quiet rhythm
           of both mountainous landscapes and urban forms.
         </p>
-        <div class="creative-stats-row">
-          <div class="creative-stat-item interactive-stat" data-target-filter="travel-nature"
-            title="Filter by Travel & Nature">
-            <span class="stat-number">Travel & Nature</span>
-            <span class="stat-label">Landscapes & Wilderness</span>
-          </div>
-          <div class="creative-stat-divider"></div>
-          <div class="creative-stat-item interactive-stat" data-target-filter="lifestyle-living"
-            title="Filter by Lifestyle & Living">
-            <span class="stat-number">Lifestyle & Living</span>
-            <span class="stat-label">Minimal Living & Rhythms</span>
-          </div>
-          <div class="creative-stat-divider"></div>
-          <div class="creative-stat-item interactive-stat"
-            onclick="window.open('https://unsplash.com/@nishad0x', '_blank')" title="Visit Unsplash Profile">
-            <span class="stat-number">Unsplash ↗</span>
-            <span class="stat-label">Full Curated Profile</span>
+
+        <!-- Showcase with image as background inside -->
+        <div class="creative-showcase-frame" onclick="window.open('https://unsplash.com/@nishad0x', '_blank')"
+          title="Click to view photography collection on Unsplash" role="button" tabindex="0"
+          onkeydown="if(event.key==='Enter'||event.key===' ')window.open('https://unsplash.com/@nishad0x', '_blank')">
+          <div class="showcase-hover-badge">
+            <span>Explore on Unsplash ↗</span>
           </div>
         </div>
+
         <div class="btn-container creative-cta-container">
-          <button class="btn btn-color-1" onclick="window.open('https://unsplash.com/@nishad0x', '_blank')">
-            Visit Unsplash Profile ↗
-          </button>
-        </div>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="creative-filter-bar">
-        <button class="filter-btn active" data-filter="all">All Captures</button>
-        <button class="filter-btn" data-filter="travel-nature">Travel & Nature</button>
-        <button class="filter-btn" data-filter="lifestyle-living">Lifestyle & Living</button>
-      </div>
-
-      <!-- Gallery Grid -->
-      <div class="creative-gallery-grid">
-        <!-- Photo 1: Himalayas (Travel & Nature) -->
-        <div class="creative-gallery-item" data-category="travel-nature">
-          <div class="creative-img-wrapper"
-            onclick="openLightbox('./assets/images/photo-himalayas.jpeg', 'Evening Light', 'Travel & Nature • Shimla', 'Sunrise breaking through rolling morning clouds over lush pine ridges in Himachal Pradesh.')">
-            <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer"
-              class="card-unsplash-badge" onclick="event.stopPropagation()" title="View on Unsplash">
-              Unsplash ↗
-            </a>
-            <img src="./assets/images/photo1.jpeg" alt="Evening Light photography" class="creative-gallery-img"
-              loading="lazy" />
-            <div class="creative-overlay">
-              <span class="overlay-category">Travel & Nature</span>
-              <h3 class="overlay-title">Evening Light</h3>
-              <p class="overlay-meta">Shimla, Himachal Pradesh</p>
-              <span class="overlay-action">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  <line x1="11" y1="8" x2="11" y2="14"></line>
-                  <line x1="8" y1="11" x2="14" y2="11"></line>
-                </svg>
-                View Details
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Photo 2: Nature Macro (Travel & Nature) -->
-        <div class="creative-gallery-item" data-category="travel-nature">
-          <div class="creative-img-wrapper"
-            onclick="openLightbox('./assets/images/photo-nature.jpg', 'Morning Dew on Forest Ferns', 'Travel & Nature • Monsoon Forest', 'Delicate water droplets glistening on deep emerald fern fronds in a misty sanctuary.')">
-            <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer"
-              class="card-unsplash-badge" onclick="event.stopPropagation()" title="View on Unsplash">
-              Unsplash ↗
-            </a>
-            <img src="./assets/images/photo2.jpeg" alt="Fern macro nature photography" class="creative-gallery-img"
-              loading="lazy" />
-            <div class="creative-overlay">
-              <span class="overlay-category">Travel & Nature</span>
-              <h3 class="overlay-title">Morning Dew on Forest Ferns</h3>
-              <p class="overlay-meta">McLeodGanj, Dharmshala, Himachal Pradesh</p>
-              <span class="overlay-action">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  <line x1="11" y1="8" x2="11" y2="14"></line>
-                  <line x1="8" y1="11" x2="14" y2="11"></line>
-                </svg>
-                View Details
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Photo 3: Coffee (Lifestyle & Living) -->
-        <div class="creative-gallery-item" data-category="lifestyle-living">
-          <div class="creative-img-wrapper"
-            onclick="openLightbox('./assets/images/photo-coffee.jpeg', 'Morning Coffee & Stillness', 'Lifestyle & Living • Ritual', 'A serene morning coffee ritual reflecting the intentional calm and art of minimal living.')">
-            <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer"
-              class="card-unsplash-badge" onclick="event.stopPropagation()" title="View on Unsplash">
-              Unsplash ↗
-            </a>
-            <img src="./assets/images/photo3.jpeg" alt="Morning Coffee" class="creative-gallery-img" loading="lazy" />
-            <div class="creative-overlay">
-              <span class="overlay-category">Lifestyle & Living</span>
-              <h3 class="overlay-title">Morning Coffee & Stillness</h3>
-              <p class="overlay-meta">Pathankot, Punjab</p>
-              <span class="overlay-action">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  <line x1="11" y1="8" x2="11" y2="14"></line>
-                  <line x1="8" y1="11" x2="14" y2="11"></line>
-                </svg>
-                View Details
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Photo 4: Street & Twilight (Lifestyle & Living) -->
-        <div class="creative-gallery-item" data-category="lifestyle-living">
-          <div class="creative-img-wrapper"
-            onclick="openLightbox('./assets/images/photo-street.jpg', 'Twilight Reflections & Solitude', 'Lifestyle & Living • Urban Night', 'Glistening rain-drenched pavement reflecting glowing city lights during quiet evening hours.')">
-            <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer"
-              class="card-unsplash-badge" onclick="event.stopPropagation()" title="View on Unsplash">
-              Unsplash ↗
-            </a>
-            <img src="./assets/images/photo4.jpg" alt="Cinematic night street photography" class="creative-gallery-img"
-              loading="lazy" />
-            <div class="creative-overlay">
-              <span class="overlay-category">Nature</span>
-              <h3 class="overlay-title">Natural Blaze</h3>
-              <p class="overlay-meta">Triund Trekk, Dharmshala, Himachal Pradesh</p>
-              <span class="overlay-action">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                  <line x1="11" y1="8" x2="11" y2="14"></line>
-                  <line x1="8" y1="11" x2="14" y2="11"></line>
-                </svg>
-                View Details
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Creative Unsplash Discovery Banner -->
-      <div class="creative-unsplash-cta-box">
-        <div class="creative-unsplash-cta-left">
-          <div class="unsplash-icon-circle">
-            <svg class="unsplash-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7.5 6.75V0h9v6.75h-9zm9 3.75H24V24H0V10.5h7.5v6.75h9V10.5z" />
+          <a href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer"
+            class="btn btn-color-1 creative-direct-btn">
+            <span>Visit Unsplash Profile</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
-          </div>
-          <div class="creative-unsplash-cta-text">
-            <h3 class="cta-heading" id="unsplash-cta-title">Explore the Full Photography Collection</h3>
-            <p class="cta-subheading" id="unsplash-cta-sub">
-              Browse high-resolution captures, visual journals, and editorial features directly on my Unsplash profile.
-            </p>
-          </div>
+          </a>
         </div>
-        <a id="unsplash-cta-btn" href="https://unsplash.com/@nishad0x" target="_blank" rel="noopener noreferrer"
-          class="btn btn-color-1 creative-unsplash-direct-btn">
-          <span id="unsplash-cta-btn-text">Visit @nishad0x on Unsplash</span>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
-        </a>
       </div>
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="scrollToSection('contact')" />
@@ -617,29 +471,6 @@
     <p>Copyright &#169; 2026 Nishad. All Rights Reserved.</p>
   </footer>
 
-  <!-- Creative Lightbox Modal -->
-  <div id="creative-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
-    <div class="lightbox-content">
-      <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close modal">&times;</button>
-      <div class="lightbox-img-wrapper">
-        <img id="lightbox-img" src="" alt="" />
-      </div>
-      <div class="lightbox-info">
-        <div class="lightbox-header-row">
-          <div>
-            <span id="lightbox-category" class="lightbox-category-tag">Category</span>
-            <h2 id="lightbox-title" class="lightbox-title">Photo Title</h2>
-          </div>
-          <button class="btn btn-color-1 lightbox-btn"
-            onclick="window.open('https://unsplash.com/@nishad0x', '_blank')">
-            View on Unsplash ↗
-          </button>
-        </div>
-        <p id="lightbox-desc" class="lightbox-desc">Photo description</p>
-      </div>
-    </div>
-  </div>
   <script src="./js/script.js"></script>
 </body>
 

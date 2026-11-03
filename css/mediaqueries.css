@@ -79,35 +79,9 @@
     flex-direction: column;
   }
 
-  .creative-gallery-grid {
-    grid-template-columns: 1fr;
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .creative-unsplash-cta-box {
-    max-width: 520px;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: column;
-    text-align: center;
-    padding: 1.75rem 1.5rem;
-    gap: 1.25rem;
-  }
-
-  .creative-unsplash-cta-left {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.9rem;
-  }
-
-  .creative-unsplash-cta-text {
-    text-align: center;
-  }
-
   .creative-profile-card {
     padding: 1.75rem 1.5rem;
+    gap: 1.5rem;
   }
 
   .creative-profile-header {
@@ -116,12 +90,8 @@
     gap: 0.75rem;
   }
 
-  .creative-stats-row {
-    gap: 1.25rem;
-  }
-
-  .stat-number {
-    font-size: 1rem;
+  .creative-showcase-frame {
+    border-radius: 1.25rem;
   }
 
   .title {
@@ -202,36 +172,27 @@
     height: 2.75rem;
   }
 
-  .creative-stats-row {
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 1rem 0;
+  .creative-profile-card {
+    padding: 1.5rem 1rem;
+    gap: 1.25rem;
   }
 
-  .creative-stat-divider {
-    display: none;
+  .creative-bio-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
-  .creative-img-wrapper {
-    height: 250px;
+  .creative-showcase-frame {
+    border-radius: 1rem;
   }
 
-  .creative-filter-bar {
-    gap: 0.45rem;
-  }
-
-  .filter-btn {
-    padding: 0.45rem 0.95rem;
-    font-size: 0.82rem;
-  }
-
-  .overlay-title {
-    font-size: 1.15rem;
-  }
-
-  .overlay-action {
+  .showcase-hover-badge {
     opacity: 1;
     transform: translateY(0);
+    bottom: 0.75rem;
+    right: 0.75rem;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.78rem;
   }
 
   .lightbox-content {

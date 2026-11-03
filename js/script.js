@@ -204,74 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial call to set active nav link and scrollbar state
   onScroll();
 
-  // Creative Gallery Filter Logic
-  const filterBtns = document.querySelectorAll(".creative-filter-bar .filter-btn");
-  const galleryItems = document.querySelectorAll(".creative-gallery-item");
-  const ctaTitle = document.getElementById("unsplash-cta-title");
-  const ctaSub = document.getElementById("unsplash-cta-sub");
-  const ctaBtnText = document.getElementById("unsplash-cta-btn-text");
-
-  function applyCategoryFilter(filter) {
-    filterBtns.forEach((b) => {
-      if (b.getAttribute("data-filter") === filter) {
-        b.classList.add("active");
-      } else {
-        b.classList.remove("active");
-      }
-    });
-
-    galleryItems.forEach((item) => {
-      const itemCat = item.getAttribute("data-category");
-      if (filter === "all" || itemCat === filter) {
-        item.style.display = "block";
-        setTimeout(() => {
-          item.style.opacity = "1";
-          item.style.transform = "scale(1)";
-        }, 15);
-      } else {
-        item.style.opacity = "0";
-        item.style.transform = "scale(0.96)";
-        setTimeout(() => {
-          item.style.display = "none";
-        }, 220);
-      }
-    });
-
-    // Update dynamic Unsplash CTA banner content
-    if (filter === "travel-nature") {
-      if (ctaTitle) ctaTitle.innerHTML = 'Looking for more <span class="highlight-text">Travel & Nature</span> captures?';
-      if (ctaSub) ctaSub.textContent = "Explore high-resolution Himalayan landscapes, wilderness series, and mountain light stories directly on my Unsplash profile.";
-      if (ctaBtnText) ctaBtnText.textContent = "Explore Travel & Nature on Unsplash";
-    } else if (filter === "lifestyle-living") {
-      if (ctaTitle) ctaTitle.innerHTML = 'Looking for more <span class="highlight-text">Lifestyle & Living</span> captures?';
-      if (ctaSub) ctaSub.textContent = "Discover minimalist everyday frames, coffee aesthetics, and quiet urban rhythms on my Unsplash profile.";
-      if (ctaBtnText) ctaBtnText.textContent = "Explore Lifestyle & Living on Unsplash";
-    } else {
-      if (ctaTitle) ctaTitle.innerHTML = 'Explore the Full Photography Collection';
-      if (ctaSub) ctaSub.textContent = "Browse high-resolution captures, visual journals, and editorial features directly on my Unsplash profile.";
-      if (ctaBtnText) ctaBtnText.textContent = "Visit @nishad0x on Unsplash";
-    }
-  }
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const filter = btn.getAttribute("data-filter");
-      applyCategoryFilter(filter);
-    });
-  });
-
-  // Enable interactive stat items in the Unsplash profile card to switch categories
-  document.querySelectorAll(".interactive-stat[data-target-filter]").forEach((stat) => {
-    stat.addEventListener("click", () => {
-      const targetFilter = stat.getAttribute("data-target-filter");
-      applyCategoryFilter(targetFilter);
-      const filterBar = document.querySelector(".creative-filter-bar");
-      if (filterBar) {
-        filterBar.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    });
-  });
-
   // Scroll Reveal Animations with IntersectionObserver
   if ("IntersectionObserver" in window) {
     const revealTargets = document.querySelectorAll(
@@ -280,10 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "section:not(#profile) .section__pic-container, " +
       "section:not(#profile) .details-container, " +
       "section:not(#profile) .text-container, " +
-      "section:not(#profile) .contact-info-upper-container, " +
-      "section:not(#profile) .creative-filter-bar, " +
-      "section:not(#profile) .creative-gallery-item, " +
-      "section:not(#profile) .creative-unsplash-cta-box"
+      "section:not(#profile) .contact-info-upper-container"
     );
 
     revealTargets.forEach((el) => {
@@ -295,14 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const cards = container.querySelectorAll(".details-container");
       cards.forEach((card, index) => {
         card.classList.add(`delay-${(index % 3) + 1}`);
-      });
-    });
-
-    // Stagger gallery items
-    document.querySelectorAll(".creative-gallery-grid").forEach((grid) => {
-      const items = grid.querySelectorAll(".creative-gallery-item");
-      items.forEach((item, index) => {
-        item.classList.add(`delay-${(index % 2) + 1}`);
       });
     });
 
