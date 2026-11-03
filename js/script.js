@@ -1,3 +1,45 @@
+// Preloader & Chrome-Style Top Loading Bar
+(function initPreloader() {
+  const preloader = document.getElementById("page-preloader");
+  const topLoader = document.getElementById("top-loading-bar");
+
+  if (topLoader) {
+    topLoader.style.width = "45%";
+  }
+
+  let isLoaded = false;
+  function hidePreloader() {
+    if (isLoaded) return;
+    isLoaded = true;
+
+    if (topLoader) {
+      topLoader.style.width = "100%";
+      setTimeout(() => {
+        topLoader.classList.add("loaded");
+      }, 250);
+    }
+
+    if (preloader) {
+      setTimeout(() => {
+        preloader.classList.add("fade-out");
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 500);
+      }, 350);
+    }
+  }
+
+  if (document.readyState === "complete") {
+    setTimeout(hidePreloader, 300);
+  } else {
+    window.addEventListener("load", () => {
+      setTimeout(hidePreloader, 300);
+    });
+    // Safety fallback: dismiss after 1.5s max
+    setTimeout(hidePreloader, 1500);
+  }
+})();
+
 // Toggle mobile menu smoothly
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");

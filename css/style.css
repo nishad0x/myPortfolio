@@ -42,6 +42,137 @@ a,
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* ==========================================================================
+   PAGE PRELOADER & CHROME-STYLE LOADING BAR
+   ========================================================================== */
+
+.top-loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background: linear-gradient(90deg, #ff7e40 0%, #e63980 35%, #9d4edd 70%, #00d4ff 100%);
+  z-index: 10001;
+  pointer-events: none;
+  transition: width 0.3s ease, opacity 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
+
+.top-loading-bar.loaded {
+  width: 100% !important;
+  opacity: 0;
+}
+
+.page-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background-color: #0e1118;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.45s ease;
+}
+
+.page-preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
+}
+
+.preloader-logo-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  animation: cosmicRotate 3.5s linear infinite;
+  box-shadow: 0 0 35px rgba(157, 78, 221, 0.35);
+  position: relative;
+  z-index: 2;
+}
+
+.preloader-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.25) 0%, rgba(230, 57, 128, 0.2) 50%, transparent 75%);
+  animation: cosmicPulse 2s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes cosmicRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cosmicPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+.preloader-bar {
+  width: 180px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff7e40, #e63980, #9d4edd, #00d4ff);
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.7);
+  transition: width 0.3s ease;
+  animation: indeterminateBar 1.6s ease-in-out infinite;
+}
+
+@keyframes indeterminateBar {
+  0% {
+    width: 0%;
+    margin-left: 0%;
+  }
+  50% {
+    width: 70%;
+    margin-left: 20%;
+  }
+  100% {
+    width: 100%;
+    margin-left: 100%;
+  }
+}
+
 /* SCROLL PROGRESS BAR */
 
 .scroll-progress {
