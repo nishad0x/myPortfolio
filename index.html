@@ -14,16 +14,19 @@
 </head>
 
 <body>
-  <!-- Page Preloader & Chrome-style Loading Bar -->
+  <!-- Minimal Editorial Preloader & Hairline Loading Bar -->
   <div id="top-loading-bar" class="top-loading-bar"></div>
-  <div id="page-preloader" class="page-preloader">
+  <div id="page-preloader" class="page-preloader" aria-hidden="true">
     <div class="preloader-content">
-      <div class="preloader-logo-wrapper">
-        <img src="./assets/web-logo-square.png" alt="Loading" class="preloader-logo" />
-        <div class="preloader-glow"></div>
+      <div class="preloader-brand">
+        <span class="preloader-name">Nishad</span>
+        <span class="preloader-dot">.</span>
       </div>
-      <div class="preloader-bar">
-        <div class="preloader-bar-fill"></div>
+      <div class="preloader-progress-row">
+        <div class="preloader-bar">
+          <div id="preloader-bar-fill" class="preloader-bar-fill"></div>
+        </div>
+        <span id="preloader-percent" class="preloader-percent">0%</span>
       </div>
     </div>
   </div>

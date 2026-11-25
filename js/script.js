@@ -1,22 +1,37 @@
-// Preloader & Chrome-Style Top Loading Bar
+// Minimal Editorial Preloader & Hairline Loading Bar
 (function initPreloader() {
   const preloader = document.getElementById("page-preloader");
   const topLoader = document.getElementById("top-loading-bar");
+  const barFill = document.getElementById("preloader-bar-fill");
+  const percentEl = document.getElementById("preloader-percent");
 
-  if (topLoader) {
-    topLoader.style.width = "45%";
+  let progress = 0;
+  let isLoaded = false;
+
+  function setProgress(val) {
+    progress = val;
+    if (barFill) barFill.style.width = `${val}%`;
+    if (topLoader) topLoader.style.width = `${val}%`;
+    if (percentEl) percentEl.textContent = `${Math.round(val)}%`;
   }
 
-  let isLoaded = false;
+  // Smooth incremental progress until window load
+  const tick = setInterval(() => {
+    if (progress < 85) {
+      setProgress(Math.min(85, progress + (85 - progress) * 0.22));
+    }
+  }, 60);
+
   function hidePreloader() {
     if (isLoaded) return;
     isLoaded = true;
+    clearInterval(tick);
+    setProgress(100);
 
     if (topLoader) {
-      topLoader.style.width = "100%";
       setTimeout(() => {
         topLoader.classList.add("loaded");
-      }, 250);
+      }, 220);
     }
 
     if (preloader) {
@@ -24,19 +39,19 @@
         preloader.classList.add("fade-out");
         setTimeout(() => {
           preloader.style.display = "none";
-        }, 500);
-      }, 350);
+        }, 550);
+      }, 250);
     }
   }
 
   if (document.readyState === "complete") {
-    setTimeout(hidePreloader, 300);
+    setTimeout(hidePreloader, 280);
   } else {
     window.addEventListener("load", () => {
-      setTimeout(hidePreloader, 300);
+      setTimeout(hidePreloader, 280);
     });
-    // Safety fallback: dismiss after 1.5s max
-    setTimeout(hidePreloader, 1500);
+    // Safety fallback: dismiss after 1.4s max
+    setTimeout(hidePreloader, 1400);
   }
 })();
 
